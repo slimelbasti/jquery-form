@@ -43,6 +43,7 @@
             text: this.config.buttonText
         }).appendTo(form);
     };
+
     $.fn.nupoll = function (options) {
         new Nupoll(this.first(),options);
         return this.first();
