@@ -38,19 +38,18 @@
         widget.element.on("submit", function (e) {
             e.preventDefault();
             widget.element.trigger("beforeresponse.enquete");
-
             let dataObj = {
                     data: JSON.stringify({selected: widget.element.find(":checked").val()})
                 },
                 ajaxSettings = $.extend(true,{},widget.config.ajaxOptions,dataObj);
-            $.ajax(ajaxSettings).done(function (data) {
-                //consume data!
+                $.ajax(ajaxSettings).done(function (data) {
+                widget.element.trigger("afterresponce.enquete");
+                widget.buildChart(data);
                 widget.labels = widget.element.find("label");
                 widget.element.width(widget.element.width()).height(widget.element.height()).find("form").remove();
             }).fail(function () {
                 let returnVal = widget.element.triggerHandler("responseError.enquete");
                 if(returnVal !==false){
-
                 }
                 widget.element.append($("<p/>",{
                 text: widget.config.errorMessage,
@@ -113,7 +112,12 @@
     };
 
     /*return*/
-
+    Enquete.prototype.buildChart(data){
+        let list = $("<dl/>"),
+            def =$("<dd/>"),
+            term = $("<dt/>"),
+            span =$("<span/>");
+    }
     $.fn.enquetes = function (options) {
         new Enquete(this.first(), options);
         return this.first();
