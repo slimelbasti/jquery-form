@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="mypoll" ></div>
+</body>
+<script src="https://code.jquery.com/jquery-3.1.1.js"
+        integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+        crossorigin="anonymous"></script>
+<script src="pluginsondage.js"></script>
+<script>
+
+    $(function(){
+        $("#mypoll").enquetes({
+            question:"what is you favorite meme?",
+            categories:["philosoraptor","willy wonka","success kid","socially awkwardvpenguin","insanity wolf"],
+           ajaxOptions:{
+                headers:{
+                    "X-REQUESTED-BY":"enquete"
+                }
+           }
+            /* created: function (el) {
+                console.log(el.attr("id"));
+            }*/
+        });
+        $("form").unbind("submit");
+    });
+
+</script>
+</html>

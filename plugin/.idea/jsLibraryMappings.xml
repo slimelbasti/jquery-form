@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptLibraryMappings">
+    <file url="file://$PROJECT_DIR$/enquete.js" libraries="{jquery-latest}" />
+    <file url="file://$PROJECT_DIR$/index.html" libraries="{jquery-latest}" />
+    <file url="file://$PROJECT_DIR$/jquery.nupoll.js" libraries="{jquery-latest}" />
+    <file url="file://$PROJECT_DIR$/pluginsondage.js" libraries="{jquery-latest}" />
+    <includedPredefinedLibrary name="ECMAScript 6" />
+  </component>
+</project>
